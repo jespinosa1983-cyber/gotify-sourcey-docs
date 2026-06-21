@@ -8,6 +8,17 @@ Sourcey 3.6.3 successfully validated and rendered the Gotify REST API specificat
 
 The target is suitable for a public proof: `gotify/server` is active, non-archived, has more than one source file, uses the MIT license, has a current public release, and commits its Swagger 2.0 specification in the repository. The generated site is independent and is not represented as official Gotify documentation.
 
+## Public artifacts
+
+- Live site: https://jespinosa1983-cyber.github.io/gotify-sourcey-docs/
+- API reference: https://jespinosa1983-cyber.github.io/gotify-sourcey-docs/api.html
+- Search index: https://jespinosa1983-cyber.github.io/gotify-sourcey-docs/search-index.json
+- LLM context: https://jespinosa1983-cyber.github.io/gotify-sourcey-docs/llms.txt
+- Evidence: https://raw.githubusercontent.com/jespinosa1983-cyber/gotify-sourcey-docs/master/evidence.json
+- Report: https://raw.githubusercontent.com/jespinosa1983-cyber/gotify-sourcey-docs/master/report.md
+
+All six URLs returned HTTP 200 without authentication after the GitHub Pages build completed.
+
 ## Pinned provenance
 
 - Repository: https://github.com/gotify/server
