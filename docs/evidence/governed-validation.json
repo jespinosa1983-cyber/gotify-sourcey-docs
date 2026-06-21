@@ -1,6 +1,6 @@
 {
   "closure": {
-    "closed_at": "2026-06-21T17:10:18.370Z",
+    "closed_at": "2026-06-21T17:13:28.747Z",
     "disposition": "closed",
     "reason_code": "process_closed",
     "summary": "cli-tool default completed"
@@ -84,7 +84,7 @@
       {
         "artifact_refs": [],
         "closure": {
-          "closed_at": "2026-06-21T17:10:18.370Z",
+          "closed_at": "2026-06-21T17:13:28.747Z",
           "disposition": "closed",
           "reason_code": "process_exit",
           "summary": "cli-tool exited successfully"
@@ -139,7 +139,7 @@
       "terms": []
     },
     "canonicalization": "runx.receipt.c14n.v1",
-    "created_at": "2026-06-21T17:10:18.370Z",
+    "created_at": "2026-06-21T17:13:28.747Z",
     "decisions": [
       {
         "artifact_refs": [],
@@ -167,8 +167,8 @@
         "selected_harness_ref": null
       }
     ],
-    "digest": "sha256:d7a3b738ef24a2926ad0d512f373694a602078469335a00d9fe79eebf3642965",
-    "id": "sha256:644bf1b687e1e78000645a4fcb679d9e62beb5b8e187af0620517eee019c1158",
+    "digest": "sha256:705879afa32eab4c72755d7d9c8aa4d47a54b82084982a66d9c075a3e6527cc5",
+    "id": "sha256:517d2b81c6152043f7f84da6a1a96ee6d65ea3e45ae606c6dbefe891571103f1",
     "idempotency": {
       "content_hash": "sha256:run_default_7989705a0ade-default-content",
       "intent_key": "sha256:run_default_7989705a0ade-default-intent",
@@ -185,7 +185,7 @@
     },
     "schema": "runx.receipt.v1",
     "seal": {
-      "closed_at": "2026-06-21T17:10:18.370Z",
+      "closed_at": "2026-06-21T17:13:28.747Z",
       "criteria": [
         {
           "criterion_id": "process_exit",
@@ -196,14 +196,14 @@
         }
       ],
       "disposition": "closed",
-      "last_observed_at": "2026-06-21T17:10:18.370Z",
+      "last_observed_at": "2026-06-21T17:13:28.747Z",
       "reason_code": "process_closed",
       "summary": "cli-tool default completed"
     },
     "signals": [],
     "signature": {
       "alg": "Ed25519",
-      "value": "base64:TVIvmppcz4C98PC5XKtr6kXO3HDIg3e37oUoDXvLjDNRKBKgNzOw7HRZVkmxCe7w7kiRW2uAifCfo0HdWh0zAA"
+      "value": "base64:t2pbDXy6SigGixWrNrtKBR1hnN4rThU2OGmLXbOSeYhfg1_cx0499UkUc-17X8WzH4Fu52ORGxSfsZqjEYPnBw"
     },
     "subject": {
       "commitments": [],
@@ -214,7 +214,7 @@
       }
     }
   },
-  "receipt_id": "sha256:644bf1b687e1e78000645a4fcb679d9e62beb5b8e187af0620517eee019c1158",
+  "receipt_id": "sha256:517d2b81c6152043f7f84da6a1a96ee6d65ea3e45ae606c6dbefe891571103f1",
   "run_id": "run_default_7989705a0ade",
   "schema": "runx.skill_run.v1",
   "skill_name": "gotify-sourcey-validation",
