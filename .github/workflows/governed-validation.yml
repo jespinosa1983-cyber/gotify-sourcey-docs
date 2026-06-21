@@ -37,9 +37,9 @@ jobs:
 
       - name: Publish receipt evidence
         run: |
-          mkdir -p docs/evidence/ci-receipts
-          cp ci-validation.json docs/evidence/ci-validation.json
-          cp -R ci-receipts/. docs/evidence/ci-receipts/
+          mkdir -p docs/evidence
+          cp ci-validation.json docs/evidence/governed-validation.json
+          node -e "const fs=require('fs');const x=JSON.parse(fs.readFileSync('ci-validation.json','utf8'));if(!x.receipt)throw new Error('missing receipt');fs.writeFileSync('docs/evidence/receipt.json',JSON.stringify(x.receipt,null,2)+'\\n')"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add docs/evidence
