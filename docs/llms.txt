@@ -1,0 +1,48 @@
+# Gotify REST-API.
+
+> This is the documentation of the Gotify REST-API.
+
+## API Reference
+
+- [Gotify REST-API.](/api.html): This is the documentation of the Gotify REST-API.
+- [Return all applications.](/api.html#operation-application-get): GET /application
+- [Create an application.](/api.html#operation-application-post): POST /application
+- [Update an application.](/api.html#operation-application-id-put): PUT /application/{id}
+- [Delete an application.](/api.html#operation-application-id-delete): DELETE /application/{id} - Requires elevated authentication.
+- [Upload an image for an application.](/api.html#operation-application-id-image-post): POST /application/{id}/image
+- [Deletes an image of an application.](/api.html#operation-application-id-image-delete): DELETE /application/{id}/image
+- [Return all messages from a specific application.](/api.html#operation-application-id-message-get): GET /application/{id}/message
+- [Delete all messages from a specific application.](/api.html#operation-application-id-message-delete): DELETE /application/{id}/message
+- [Authenticate via basic auth and create a session.](/api.html#operation-auth-local-login-post): POST /auth/local/login
+- [End the current session.](/api.html#operation-auth-logout-post): POST /auth/logout - Clears the session cookie and deletes the associated client.
+- [Handle the OIDC provider callback (browser).](/api.html#operation-auth-oidc-callback-get): GET /auth/oidc/callback - Exchanges the authorization code for tokens, resolves the user,
+- [Start the OIDC flow to elevate an existing client session (browser).](/api.html#operation-auth-oidc-elevate-get): GET /auth/oidc/elevate - Redirects the user to the OIDC provider's authorization endpoint. After
+- [Initiate the OIDC authorization flow for a native app.](/api.html#operation-auth-oidc-external-authorize-post): POST /auth/oidc/external/authorize - The app generates a PKCE code_verifier and code_challenge, then calls this
+- [Exchange an authorization code for a gotify client token.](/api.html#operation-auth-oidc-external-token-post): POST /auth/oidc/external/token - After the user authenticates with the OIDC provider and the app receives
+- [Start the OIDC login flow (browser).](/api.html#operation-auth-oidc-login-get): GET /auth/oidc/login - Redirects the user to the OIDC provider's authorization endpoint.
+- [Return all clients.](/api.html#operation-client-get): GET /client
+- [Create a client.](/api.html#operation-client-post): POST /client
+- [Update a client.](/api.html#operation-client-id-put): PUT /client/{id}
+- [Delete a client.](/api.html#operation-client-id-delete): DELETE /client/{id} - Requires elevated authentication.
+- [Elevate a client session.](/api.html#operation-client-id-elevate-post): POST /client/{id}/elevate - Requires elevated authentication.
+- [Return the current user.](/api.html#operation-current-user-get): GET /current/user - Requires elevated authentication.
+- [Update the password of the current user.](/api.html#operation-current-user-password-post): POST /current/user/password - Requires elevated authentication.
+- [Get gotify information.](/api.html#operation-gotifyinfo-get): GET /gotifyinfo
+- [Get health information.](/api.html#operation-health-get): GET /health
+- [Return all messages.](/api.html#operation-message-get): GET /message
+- [Create a message.](/api.html#operation-message-post): POST /message - __NOTE__: When authenticating with a client token or basic auth, the request body
+- [Delete all messages.](/api.html#operation-message-delete): DELETE /message
+- [Deletes a message with an id.](/api.html#operation-message-id-delete): DELETE /message/{id}
+- [Return all plugins.](/api.html#operation-plugin-get): GET /plugin
+- [Get YAML configuration for Configurer plugin.](/api.html#operation-plugin-id-config-get): GET /plugin/{id}/config
+- [Update YAML configuration for Configurer plugin.](/api.html#operation-plugin-id-config-post): POST /plugin/{id}/config
+- [Disable a plugin.](/api.html#operation-plugin-id-disable-post): POST /plugin/{id}/disable
+- [Get display info for a Displayer plugin.](/api.html#operation-plugin-id-display-get): GET /plugin/{id}/display
+- [Enable a plugin.](/api.html#operation-plugin-id-enable-post): POST /plugin/{id}/enable
+- [Websocket, return newly created messages.](/api.html#operation-stream-get): GET /stream
+- [Return all users.](/api.html#operation-user-get): GET /user - Requires elevated authentication.
+- [Create a user.](/api.html#operation-user-post): POST /user - With enabled registration: non admin users can be created without authentication.
+- [Get a user.](/api.html#operation-user-id-get): GET /user/{id} - Requires elevated authentication.
+- [Update a user.](/api.html#operation-user-id-post): POST /user/{id} - Requires elevated authentication.
+- [Deletes a user.](/api.html#operation-user-id-delete): DELETE /user/{id} - Requires elevated authentication.
+- [Get version information.](/api.html#operation-version-get): GET /version

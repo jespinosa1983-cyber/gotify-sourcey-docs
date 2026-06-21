@@ -1,0 +1,599 @@
+{
+  "schema_version": 1,
+  "bounty": 33,
+  "captured_at": "2026-06-21T16:57:53.1465008Z",
+  "summary": "Sourcey 3.6.3 generated navigable static documentation for all 41 operations and 22 schemas in the pinned Gotify Swagger 2.0 specification.",
+  "source": {
+    "repository": "https://github.com/gotify/server",
+    "commit": "8221c0b895fdd1b1b84c0d5784e9422eb314ecb5",
+    "commit_url": "https://github.com/gotify/server/commit/8221c0b895fdd1b1b84c0d5784e9422eb314ecb5",
+    "spec_url": "https://raw.githubusercontent.com/gotify/server/8221c0b895fdd1b1b84c0d5784e9422eb314ecb5/docs/spec.json",
+    "spec_sha256": "1d8e93d7170d778d06ffc1d7aae82197bb7c45b970ee70efb4082fde789a2352",
+    "license": "MIT",
+    "license_url": "https://github.com/gotify/server/blob/8221c0b895fdd1b1b84c0d5784e9422eb314ecb5/LICENSE",
+    "recent_commit_at": "2026-06-20T13:34:06Z",
+    "release_checked": "v2.9.1"
+  },
+  "adapter": {
+    "name": "Sourcey OpenAPI quick build",
+    "sourcey_version": "3.6.3",
+    "format": "Swagger 2.0 JSON",
+    "validate_command": "sourcey validate .\\source\\spec.json",
+    "build_command": "sourcey build .\\source\\spec.json -o .\\docs"
+  },
+  "coverage": {
+    "paths": 29,
+    "operations": 41,
+    "schemas": 22,
+    "search_entries": 63,
+    "operation_ids": 41,
+    "summaries": 41,
+    "descriptions": 17,
+    "missing_descriptions": 24,
+    "security_declared": 33,
+    "security_omitted": 8,
+    "security_definitions": 7,
+    "generated_localhost_occurrences": 289
+  },
+  "page_list": [
+    {
+      "path": "docs/.nojekyll",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "docs/api.html",
+      "bytes": 2386441,
+      "sha256": "c32d3b0a0110601c85c76e7963e7bb4d001dd02fc0b074a86729443d1bce8b18"
+    },
+    {
+      "path": "docs/index.html",
+      "bytes": 2386441,
+      "sha256": "c32d3b0a0110601c85c76e7963e7bb4d001dd02fc0b074a86729443d1bce8b18"
+    },
+    {
+      "path": "docs/llms-full.txt",
+      "bytes": 13381,
+      "sha256": "6a2b353e59e9f003308154e2f08983f45feab283b2ce7f0c8694ca41f55a7b88"
+    },
+    {
+      "path": "docs/llms.txt",
+      "bytes": 4992,
+      "sha256": "3bddb0fbac3cd900769d367cc6a8bea2fee4a54d5d7a2f5adeffcc93e4b7cd6c"
+    },
+    {
+      "path": "docs/search-index.json",
+      "bytes": 13073,
+      "sha256": "f4ad69e00706ca8d5db526c46ee0590f4506ef40517d69d3265af9ea8e28fb91"
+    },
+    {
+      "path": "docs/sitemap.xml",
+      "bytes": 193,
+      "sha256": "3d33f6dfd93fd01f07dde5ddd8545b2420128e9f4cd384a69886767f3fde3537"
+    },
+    {
+      "path": "docs/sourcey.css",
+      "bytes": 242835,
+      "sha256": "c1a3aaa686d5018ffdf384031ac7ebc3377d2eac349cd11ac92429bfe9234b59"
+    },
+    {
+      "path": "docs/sourcey.js",
+      "bytes": 17326,
+      "sha256": "74add4e9f40ef9adf688c36636f9baa0d470bef54e561c26e0236526344cdb15"
+    },
+    {
+      "path": "docs/_og/api.png",
+      "bytes": 66408,
+      "sha256": "9f9d52e44b18d65e6ee0607372863b6f2d954b2959fd29397b2bcd50f1cbf888"
+    }
+  ],
+  "spot_checks": [
+    {
+      "id": "application",
+      "source_path": "/application",
+      "generated_path": "docs/api.html",
+      "occurrences": 48,
+      "result": "present"
+    },
+    {
+      "id": "message",
+      "source_path": "/message",
+      "generated_path": "docs/api.html",
+      "occurrences": 44,
+      "result": "present"
+    },
+    {
+      "id": "stream",
+      "source_path": "/stream",
+      "generated_path": "docs/api.html",
+      "occurrences": 6,
+      "result": "present"
+    }
+  ],
+  "observations": [
+    {
+      "id": "version-gap",
+      "finding": "Spec info.version is 2.1.0 while current release checked is v2.9.1.",
+      "recommendation": "Derive or explain the API schema version."
+    },
+    {
+      "id": "host-gap",
+      "finding": "Spec host localhost appears 289 times in generated API HTML.",
+      "recommendation": "Document deployment base URL substitution."
+    },
+    {
+      "id": "description-gap",
+      "finding": "24 of 41 operations lack description.",
+      "recommendation": "Add behavioral prose for mutations, tokens, pagination, uploads and streaming."
+    },
+    {
+      "id": "security-gap",
+      "finding": "No global security and 8 operations omit operation-level security.",
+      "recommendation": "Mark public and protected operations explicitly."
+    },
+    {
+      "id": "guide-gap",
+      "finding": "Quick mode yields reference but no workflow guides.",
+      "recommendation": "Add auth, first-message, streaming, pagination and elevation guides."
+    }
+  ],
+  "operations": [
+    {
+      "method": "GET",
+      "path": "/application",
+      "operation_id": "getApps",
+      "summary": "Return all applications.",
+      "tags": [
+        "application"
+      ],
+      "has_description": false,
+      "security_declared": true
+    },
+    {
+      "method": "POST",
+      "path": "/application",
+      "operation_id": "createApp",
+      "summary": "Create an application.",
+      "tags": [
+        "application"
+      ],
+      "has_description": false,
+      "security_declared": true
+    },
+    {
+      "method": "PUT",
+      "path": "/application/{id}",
+      "operation_id": "updateApplication",
+      "summary": "Update an application.",
+      "tags": [
+        "application"
+      ],
+      "has_description": false,
+      "security_declared": true
+    },
+    {
+      "method": "DELETE",
+      "path": "/application/{id}",
+      "operation_id": "deleteApp",
+      "summary": "Delete an application.",
+      "tags": [
+        "application"
+      ],
+      "has_description": true,
+      "security_declared": true
+    },
+    {
+      "method": "POST",
+      "path": "/application/{id}/image",
+      "operation_id": "uploadAppImage",
+      "summary": "Upload an image for an application.",
+      "tags": [
+        "application"
+      ],
+      "has_description": false,
+      "security_declared": true
+    },
+    {
+      "method": "DELETE",
+      "path": "/application/{id}/image",
+      "operation_id": "removeAppImage",
+      "summary": "Deletes an image of an application.",
+      "tags": [
+        "application"
+      ],
+      "has_description": false,
+      "security_declared": true
+    },
+    {
+      "method": "GET",
+      "path": "/application/{id}/message",
+      "operation_id": "getAppMessages",
+      "summary": "Return all messages from a specific application.",
+      "tags": [
+        "message"
+      ],
+      "has_description": false,
+      "security_declared": true
+    },
+    {
+      "method": "DELETE",
+      "path": "/application/{id}/message",
+      "operation_id": "deleteAppMessages",
+      "summary": "Delete all messages from a specific application.",
+      "tags": [
+        "message"
+      ],
+      "has_description": false,
+      "security_declared": true
+    },
+    {
+      "method": "POST",
+      "path": "/auth/local/login",
+      "operation_id": "localLogin",
+      "summary": "Authenticate via basic auth and create a session.",
+      "tags": [
+        "auth"
+      ],
+      "has_description": false,
+      "security_declared": true
+    },
+    {
+      "method": "POST",
+      "path": "/auth/logout",
+      "operation_id": "logout",
+      "summary": "End the current session.",
+      "tags": [
+        "auth"
+      ],
+      "has_description": true,
+      "security_declared": true
+    },
+    {
+      "method": "GET",
+      "path": "/auth/oidc/callback",
+      "operation_id": "oidcCallback",
+      "summary": "Handle the OIDC provider callback (browser).",
+      "tags": [
+        "oidc"
+      ],
+      "has_description": true,
+      "security_declared": false
+    },
+    {
+      "method": "GET",
+      "path": "/auth/oidc/elevate",
+      "operation_id": "oidcElevate",
+      "summary": "Start the OIDC flow to elevate an existing client session (browser).",
+      "tags": [
+        "oidc"
+      ],
+      "has_description": true,
+      "security_declared": false
+    },
+    {
+      "method": "POST",
+      "path": "/auth/oidc/external/authorize",
+      "operation_id": "externalAuthorize",
+      "summary": "Initiate the OIDC authorization flow for a native app.",
+      "tags": [
+        "oidc"
+      ],
+      "has_description": true,
+      "security_declared": false
+    },
+    {
+      "method": "POST",
+      "path": "/auth/oidc/external/token",
+      "operation_id": "externalToken",
+      "summary": "Exchange an authorization code for a gotify client token.",
+      "tags": [
+        "oidc"
+      ],
+      "has_description": true,
+      "security_declared": false
+    },
+    {
+      "method": "GET",
+      "path": "/auth/oidc/login",
+      "operation_id": "oidcLogin",
+      "summary": "Start the OIDC login flow (browser).",
+      "tags": [
+        "oidc"
+      ],
+      "has_description": true,
+      "security_declared": false
+    },
+    {
+      "method": "GET",
+      "path": "/client",
+      "operation_id": "getClients",
+      "summary": "Return all clients.",
+      "tags": [
+        "client"
+      ],
+      "has_description": false,
+      "security_declared": true
+    },
+    {
+      "method": "POST",
+      "path": "/client",
+      "operation_id": "createClient",
+      "summary": "Create a client.",
+      "tags": [
+        "client"
+      ],
+      "has_description": false,
+      "security_declared": true
+    },
+    {
+      "method": "PUT",
+      "path": "/client/{id}",
+      "operation_id": "updateClient",
+      "summary": "Update a client.",
+      "tags": [
+        "client"
+      ],
+      "has_description": false,
+      "security_declared": true
+    },
+    {
+      "method": "DELETE",
+      "path": "/client/{id}",
+      "operation_id": "deleteClient",
+      "summary": "Delete a client.",
+      "tags": [
+        "client"
+      ],
+      "has_description": true,
+      "security_declared": true
+    },
+    {
+      "method": "POST",
+      "path": "/client/{id}/elevate",
+      "operation_id": "elevateClient",
+      "summary": "Elevate a client session.",
+      "tags": [
+        "client"
+      ],
+      "has_description": true,
+      "security_declared": true
+    },
+    {
+      "method": "GET",
+      "path": "/current/user",
+      "operation_id": "currentUser",
+      "summary": "Return the current user.",
+      "tags": [
+        "user"
+      ],
+      "has_description": true,
+      "security_declared": true
+    },
+    {
+      "method": "POST",
+      "path": "/current/user/password",
+      "operation_id": "updateCurrentUser",
+      "summary": "Update the password of the current user.",
+      "tags": [
+        "user"
+      ],
+      "has_description": true,
+      "security_declared": true
+    },
+    {
+      "method": "GET",
+      "path": "/gotifyinfo",
+      "operation_id": "getInfo",
+      "summary": "Get gotify information.",
+      "tags": [
+        "info"
+      ],
+      "has_description": false,
+      "security_declared": false
+    },
+    {
+      "method": "GET",
+      "path": "/health",
+      "operation_id": "getHealth",
+      "summary": "Get health information.",
+      "tags": [
+        "info"
+      ],
+      "has_description": false,
+      "security_declared": false
+    },
+    {
+      "method": "GET",
+      "path": "/message",
+      "operation_id": "getMessages",
+      "summary": "Return all messages.",
+      "tags": [
+        "message"
+      ],
+      "has_description": false,
+      "security_declared": true
+    },
+    {
+      "method": "POST",
+      "path": "/message",
+      "operation_id": "createMessage",
+      "summary": "Create a message.",
+      "tags": [
+        "message"
+      ],
+      "has_description": true,
+      "security_declared": true
+    },
+    {
+      "method": "DELETE",
+      "path": "/message",
+      "operation_id": "deleteMessages",
+      "summary": "Delete all messages.",
+      "tags": [
+        "message"
+      ],
+      "has_description": false,
+      "security_declared": true
+    },
+    {
+      "method": "DELETE",
+      "path": "/message/{id}",
+      "operation_id": "deleteMessage",
+      "summary": "Deletes a message with an id.",
+      "tags": [
+        "message"
+      ],
+      "has_description": false,
+      "security_declared": true
+    },
+    {
+      "method": "GET",
+      "path": "/plugin",
+      "operation_id": "getPlugins",
+      "summary": "Return all plugins.",
+      "tags": [
+        "plugin"
+      ],
+      "has_description": false,
+      "security_declared": true
+    },
+    {
+      "method": "GET",
+      "path": "/plugin/{id}/config",
+      "operation_id": "getPluginConfig",
+      "summary": "Get YAML configuration for Configurer plugin.",
+      "tags": [
+        "plugin"
+      ],
+      "has_description": false,
+      "security_declared": true
+    },
+    {
+      "method": "POST",
+      "path": "/plugin/{id}/config",
+      "operation_id": "updatePluginConfig",
+      "summary": "Update YAML configuration for Configurer plugin.",
+      "tags": [
+        "plugin"
+      ],
+      "has_description": false,
+      "security_declared": true
+    },
+    {
+      "method": "POST",
+      "path": "/plugin/{id}/disable",
+      "operation_id": "disablePlugin",
+      "summary": "Disable a plugin.",
+      "tags": [
+        "plugin"
+      ],
+      "has_description": false,
+      "security_declared": true
+    },
+    {
+      "method": "GET",
+      "path": "/plugin/{id}/display",
+      "operation_id": "getPluginDisplay",
+      "summary": "Get display info for a Displayer plugin.",
+      "tags": [
+        "plugin"
+      ],
+      "has_description": false,
+      "security_declared": true
+    },
+    {
+      "method": "POST",
+      "path": "/plugin/{id}/enable",
+      "operation_id": "enablePlugin",
+      "summary": "Enable a plugin.",
+      "tags": [
+        "plugin"
+      ],
+      "has_description": false,
+      "security_declared": true
+    },
+    {
+      "method": "GET",
+      "path": "/stream",
+      "operation_id": "streamMessages",
+      "summary": "Websocket, return newly created messages.",
+      "tags": [
+        "message"
+      ],
+      "has_description": false,
+      "security_declared": true
+    },
+    {
+      "method": "GET",
+      "path": "/user",
+      "operation_id": "getUsers",
+      "summary": "Return all users.",
+      "tags": [
+        "user"
+      ],
+      "has_description": true,
+      "security_declared": true
+    },
+    {
+      "method": "POST",
+      "path": "/user",
+      "operation_id": "createUser",
+      "summary": "Create a user.",
+      "tags": [
+        "user"
+      ],
+      "has_description": true,
+      "security_declared": true
+    },
+    {
+      "method": "GET",
+      "path": "/user/{id}",
+      "operation_id": "getUser",
+      "summary": "Get a user.",
+      "tags": [
+        "user"
+      ],
+      "has_description": true,
+      "security_declared": true
+    },
+    {
+      "method": "POST",
+      "path": "/user/{id}",
+      "operation_id": "updateUser",
+      "summary": "Update a user.",
+      "tags": [
+        "user"
+      ],
+      "has_description": true,
+      "security_declared": true
+    },
+    {
+      "method": "DELETE",
+      "path": "/user/{id}",
+      "operation_id": "deleteUser",
+      "summary": "Deletes a user.",
+      "tags": [
+        "user"
+      ],
+      "has_description": true,
+      "security_declared": true
+    },
+    {
+      "method": "GET",
+      "path": "/version",
+      "operation_id": "getVersion",
+      "summary": "Get version information.",
+      "tags": [
+        "info"
+      ],
+      "has_description": false,
+      "security_declared": false
+    }
+  ],
+  "runx": {
+    "version_command": "runx --version",
+    "version_output": "runx-cli 0.6.8",
+    "receipt_ref": null,
+    "receipt_status": "pending_official_runx_authorization"
+  }
+}

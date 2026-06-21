@@ -1,0 +1,618 @@
+# Gotify REST-API.
+
+This is the documentation of the Gotify REST-API.
+
+# Authentication
+In Gotify there are two token types:
+__clientToken__: a client is something that receives message and manages stuff like creating new tokens or delete messages. (f.ex this token should be used for an android app)
+__appToken__: an application is something that sends messages (f.ex. this token should be used for a shell script)
+
+The token can be transmitted in a header named `X-Gotify-Key`, in a query parameter named `token` or
+through a header named `Authorization` with the value prefixed with `Bearer` (Ex. `Bearer randomtoken`).
+There is also the possibility to authenticate through basic auth, this should only be used for creating a clientToken.
+
+\---
+
+Found a bug or have some questions? [Create an issue on GitHub](https://github.com/gotify/server/issues)
+
+## API Reference
+
+### Gotify REST-API.
+
+Path: `/api.html`
+Version: 2.1.0
+
+This is the documentation of the Gotify REST-API.
+
+# Authentication
+In Gotify there are two token types:
+__clientToken__: a client is something that receives message and manages stuff like creating new tokens or delete messages. (f.ex this token should be used for an android app)
+__appToken__: an application is something that sends messages (f.ex. this token should be used for a shell script)
+
+The token can be transmitted in a header named `X-Gotify-Key`, in a query parameter named `token` or
+through a header named `Authorization` with the value prefixed with `Bearer` (Ex. `Bearer randomtoken`).
+There is also the possibility to authenticate through basic auth, this should only be used for creating a clientToken.
+
+\---
+
+Found a bug or have some questions? [Create an issue on GitHub](https://github.com/gotify/server/issues)
+
+#### Operations
+
+##### GET /application
+
+Summary: Return all applications.
+
+Responses:
+- 200: Ok
+- 401: Unauthorized
+- 403: Forbidden
+
+##### POST /application
+
+Summary: Create an application.
+
+Request body: application/json
+
+Responses:
+- 200: Ok
+- 400: Bad Request
+- 401: Unauthorized
+- 403: Forbidden
+
+##### PUT /application/{id}
+
+Summary: Update an application.
+
+Parameters:
+- `id` (path, integer, required) - the application id
+
+Request body: application/json
+
+Responses:
+- 200: Ok
+- 400: Bad Request
+- 401: Unauthorized
+- 403: Forbidden
+- 404: Not Found
+
+##### DELETE /application/{id}
+
+Summary: Delete an application.
+
+Requires elevated authentication.
+
+Parameters:
+- `id` (path, integer, required) - the application id
+
+Responses:
+- 200: Ok
+- 400: Bad Request
+- 401: Unauthorized
+- 403: Forbidden
+- 404: Not Found
+
+##### POST /application/{id}/image
+
+Summary: Upload an image for an application.
+
+Parameters:
+- `id` (path, integer, required) - the application id
+
+Request body: multipart/form-data
+
+Responses:
+- 200: Ok
+- 400: Bad Request
+- 401: Unauthorized
+- 403: Forbidden
+- 404: Not Found
+- 500: Server Error
+
+##### DELETE /application/{id}/image
+
+Summary: Deletes an image of an application.
+
+Parameters:
+- `id` (path, integer, required) - the application id
+
+Responses:
+- 200: Ok
+- 400: Bad Request
+- 401: Unauthorized
+- 403: Forbidden
+- 404: Not Found
+- 500: Server Error
+
+##### GET /application/{id}/message
+
+Summary: Return all messages from a specific application.
+
+Parameters:
+- `id` (path, integer, required) - the application id
+- `limit` (query, integer, optional) - the maximal amount of messages to return
+- `since` (query, integer, optional) - return all messages with an ID less than this value
+
+Responses:
+- 200: Ok
+- 400: Bad Request
+- 401: Unauthorized
+- 403: Forbidden
+- 404: Not Found
+
+##### DELETE /application/{id}/message
+
+Summary: Delete all messages from a specific application.
+
+Parameters:
+- `id` (path, integer, required) - the application id
+
+Responses:
+- 200: Ok
+- 400: Bad Request
+- 401: Unauthorized
+- 403: Forbidden
+- 404: Not Found
+
+##### POST /auth/local/login
+
+Summary: Authenticate via basic auth and create a session.
+
+Request body: application/x-www-form-urlencoded
+
+Responses:
+- 200: Ok
+- 401: Unauthorized
+
+##### POST /auth/logout
+
+Summary: End the current session.
+
+Clears the session cookie and deletes the associated client.
+
+Responses:
+- 200: Ok
+- 400: Bad Request
+
+##### GET /auth/oidc/callback
+
+Summary: Handle the OIDC provider callback (browser).
+
+Exchanges the authorization code for tokens, resolves the user,
+creates a gotify client, sets a session cookie, and redirects to the UI.
+
+Parameters:
+- `code` (query, string, required) - the authorization code from the OIDC provider
+- `state` (query, string, required) - the state parameter for CSRF protection
+
+Responses:
+- 200: ok
+- 307: Redirect to UI
+- default: Error
+
+##### GET /auth/oidc/elevate
+
+Summary: Start the OIDC flow to elevate an existing client session (browser).
+
+Redirects the user to the OIDC provider's authorization endpoint. After
+successful authentication, the referenced client session is elevated for
+the requested duration.
+
+Parameters:
+- `id` (query, integer, required) - the client id to elevate
+- `durationSeconds` (query, integer, required) - how long the elevation should last, in seconds
+
+Responses:
+- 302: Redirect to OIDC provider
+- default: Error
+
+##### POST /auth/oidc/external/authorize
+
+Summary: Initiate the OIDC authorization flow for a native app.
+
+The app generates a PKCE code_verifier and code_challenge, then calls this
+endpoint. The server forwards the code_challenge to the OIDC provider and
+returns the authorization URL for the app to open in a browser.
+
+Request body: application/json
+
+Responses:
+- 200: Ok
+- default: Error
+
+##### POST /auth/oidc/external/token
+
+Summary: Exchange an authorization code for a gotify client token.
+
+After the user authenticates with the OIDC provider and the app receives
+the authorization code via redirect, the app calls this endpoint with the
+code and PKCE code_verifier. The server exchanges the code with the OIDC
+provider and returns a gotify client token.
+
+Request body: application/json
+
+Responses:
+- 200: Ok
+- default: Error
+
+##### GET /auth/oidc/login
+
+Summary: Start the OIDC login flow (browser).
+
+Redirects the user to the OIDC provider's authorization endpoint.
+After authentication, the provider redirects back to the callback endpoint.
+
+Parameters:
+- `name` (query, string, required) - the client name to create after login
+
+Responses:
+- 302: Redirect to OIDC provider
+- default: Error
+
+##### GET /client
+
+Summary: Return all clients.
+
+Responses:
+- 200: Ok
+- 401: Unauthorized
+- 403: Forbidden
+
+##### POST /client
+
+Summary: Create a client.
+
+Request body: application/json
+
+Responses:
+- 200: Ok
+- 400: Bad Request
+- 401: Unauthorized
+- 403: Forbidden
+
+##### PUT /client/{id}
+
+Summary: Update a client.
+
+Parameters:
+- `id` (path, integer, required) - the client id
+
+Request body: application/json
+
+Responses:
+- 200: Ok
+- 400: Bad Request
+- 401: Unauthorized
+- 403: Forbidden
+- 404: Not Found
+
+##### DELETE /client/{id}
+
+Summary: Delete a client.
+
+Requires elevated authentication.
+
+Parameters:
+- `id` (path, integer, required) - the client id
+
+Responses:
+- 200: Ok
+- 400: Bad Request
+- 401: Unauthorized
+- 403: Forbidden
+- 404: Not Found
+
+##### POST /client/{id}/elevate
+
+Summary: Elevate a client session.
+
+Requires elevated authentication.
+
+Parameters:
+- `id` (path, integer, required) - the client id
+
+Request body: application/json
+
+Responses:
+- 204: Ok
+- 400: Bad Request
+- 401: Unauthorized
+- 404: Not Found
+
+##### GET /current/user
+
+Summary: Return the current user.
+
+Requires elevated authentication.
+
+Responses:
+- 200: Ok
+- 401: Unauthorized
+- 403: Forbidden
+
+##### POST /current/user/password
+
+Summary: Update the password of the current user.
+
+Requires elevated authentication.
+
+Request body: application/json
+
+Responses:
+- 200: Ok
+- 400: Bad Request
+- 401: Unauthorized
+- 403: Forbidden
+
+##### GET /gotifyinfo
+
+Summary: Get gotify information.
+
+Responses:
+- 200: Ok
+
+##### GET /health
+
+Summary: Get health information.
+
+Responses:
+- 200: Ok
+- 500: Ok
+
+##### GET /message
+
+Summary: Return all messages.
+
+Parameters:
+- `limit` (query, integer, optional) - the maximal amount of messages to return
+- `since` (query, integer, optional) - return all messages with an ID less than this value
+
+Responses:
+- 200: Ok
+- 400: Bad Request
+- 401: Unauthorized
+- 403: Forbidden
+
+##### POST /message
+
+Summary: Create a message.
+
+__NOTE__: When authenticating with a client token or basic auth, the request body
+must include "appid" referencing an application owned by the authenticated user.
+When authenticating with an application token, the application is derived from the
+token and any "appid" in the body is ignored.
+
+Request body: application/json
+
+Responses:
+- 200: Ok
+- 400: Bad Request
+- 401: Unauthorized
+- 403: Forbidden
+
+##### DELETE /message
+
+Summary: Delete all messages.
+
+Responses:
+- 200: Ok
+- 401: Unauthorized
+- 403: Forbidden
+
+##### DELETE /message/{id}
+
+Summary: Deletes a message with an id.
+
+Parameters:
+- `id` (path, integer, required) - the message id
+
+Responses:
+- 200: Ok
+- 400: Bad Request
+- 401: Unauthorized
+- 403: Forbidden
+- 404: Not Found
+
+##### GET /plugin
+
+Summary: Return all plugins.
+
+Responses:
+- 200: Ok
+- 401: Unauthorized
+- 403: Forbidden
+- 404: Not Found
+- 500: Internal Server Error
+
+##### GET /plugin/{id}/config
+
+Summary: Get YAML configuration for Configurer plugin.
+
+Parameters:
+- `id` (path, integer, required) - the plugin id
+
+Responses:
+- 200: Ok
+- 400: Bad Request
+- 401: Unauthorized
+- 403: Forbidden
+- 404: Not Found
+- 500: Internal Server Error
+
+##### POST /plugin/{id}/config
+
+Summary: Update YAML configuration for Configurer plugin.
+
+Parameters:
+- `id` (path, integer, required) - the plugin id
+
+Responses:
+- 200: Ok
+- 400: Bad Request
+- 401: Unauthorized
+- 403: Forbidden
+- 404: Not Found
+- 500: Internal Server Error
+
+##### POST /plugin/{id}/disable
+
+Summary: Disable a plugin.
+
+Parameters:
+- `id` (path, integer, required) - the plugin id
+
+Responses:
+- 200: Ok
+- 401: Unauthorized
+- 403: Forbidden
+- 404: Not Found
+- 500: Internal Server Error
+
+##### GET /plugin/{id}/display
+
+Summary: Get display info for a Displayer plugin.
+
+Parameters:
+- `id` (path, integer, required) - the plugin id
+
+Responses:
+- 200: Ok
+- 401: Unauthorized
+- 403: Forbidden
+- 404: Not Found
+- 500: Internal Server Error
+
+##### POST /plugin/{id}/enable
+
+Summary: Enable a plugin.
+
+Parameters:
+- `id` (path, integer, required) - the plugin id
+
+Responses:
+- 200: Ok
+- 401: Unauthorized
+- 403: Forbidden
+- 404: Not Found
+- 500: Internal Server Error
+
+##### GET /stream
+
+Summary: Websocket, return newly created messages.
+
+Responses:
+- 200: Ok
+- 400: Bad Request
+- 401: Unauthorized
+- 403: Forbidden
+- 500: Server Error
+
+##### GET /user
+
+Summary: Return all users.
+
+Requires elevated authentication.
+
+Responses:
+- 200: Ok
+- 401: Unauthorized
+- 403: Forbidden
+
+##### POST /user
+
+Summary: Create a user.
+
+With enabled registration: non admin users can be created without authentication.
+With disabled registrations: users can only be created by admin users.
+
+Requires elevated authentication.
+
+Request body: application/json
+
+Responses:
+- 200: Ok
+- 400: Bad Request
+- 401: Unauthorized
+- 403: Forbidden
+
+##### GET /user/{id}
+
+Summary: Get a user.
+
+Requires elevated authentication.
+
+Parameters:
+- `id` (path, integer, required) - the user id
+
+Responses:
+- 200: Ok
+- 400: Bad Request
+- 401: Unauthorized
+- 403: Forbidden
+- 404: Not Found
+
+##### POST /user/{id}
+
+Summary: Update a user.
+
+Requires elevated authentication.
+
+Parameters:
+- `id` (path, integer, required) - the user id
+
+Request body: application/json
+
+Responses:
+- 200: Ok
+- 400: Bad Request
+- 401: Unauthorized
+- 403: Forbidden
+- 404: Not Found
+
+##### DELETE /user/{id}
+
+Summary: Deletes a user.
+
+Requires elevated authentication.
+
+Parameters:
+- `id` (path, integer, required) - the user id
+
+Responses:
+- 200: Ok
+- 400: Bad Request
+- 401: Unauthorized
+- 403: Forbidden
+- 404: Not Found
+
+##### GET /version
+
+Summary: Get version information.
+
+Responses:
+- 200: Ok
+
+#### Models
+
+- Application: The Application holds information about an app which can send notifications.
+- ApplicationParams: Params allowed to create or update Applications.
+- Client: The Client holds information about a device which can receive notifications (and other stuff).
+- ClientParams: Params allowed to create or update Clients.
+- CreateUserExternal: Used for user creation.
+- CurrentUser: CurrentUserExternal Model
+- ElevateRequest
+- Error: The Error contains error relevant information.
+- GotifyInfo: GotifyInfo Model
+- Health: Health represents how healthy the application is.
+- Message: The MessageExternal holds information about a message which was sent by an Application.
+- OIDCExternalAuthorizeRequest: Used to initiate the OIDC authorization flow for an external client.
+- OIDCExternalAuthorizeResponse: Returned after initiating the OIDC authorization flow.
+- OIDCExternalTokenRequest: Used to exchange an authorization code for a gotify client token.
+- OIDCExternalTokenResponse: Returned after a successful token exchange.
+- PagedMessages: Wrapper for the paging and the messages.
+- Paging: The Paging holds information about the limit and making requests to the next page.
+- PluginConf: Holds information about a plugin instance for one user.
+- UpdateUserExternal: Used for updating a user.
+- User: The User holds information about permission and other stuff.
+- UserPass: The Password for updating the user.
+- VersionInfo: VersionInfo Model
