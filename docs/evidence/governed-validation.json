@@ -1,6 +1,6 @@
 {
   "closure": {
-    "closed_at": "2026-06-21T17:13:28.747Z",
+    "closed_at": "2026-06-21T17:25:29.423Z",
     "disposition": "closed",
     "reason_code": "process_closed",
     "summary": "cli-tool default completed"
@@ -15,6 +15,7 @@
         "operation_count_matches": true,
         "public_url_is_https": true,
         "report_has_five_gaps": true,
+        "runx_version_observed": true,
         "schema_count_matches": true,
         "search_index_has_coverage": true,
         "source_sha_matches": true,
@@ -31,7 +32,7 @@
       "status": "validated"
     },
     "stderr": "",
-    "stdout": "{\"status\":\"validated\",\"source_commit\":\"8221c0b895fdd1b1b84c0d5784e9422eb314ecb5\",\"spec_sha256\":\"1d8e93d7170d778d06ffc1d7aae82197bb7c45b970ee70efb4082fde789a2352\",\"operations\":41,\"schemas\":22,\"search_entries\":63,\"public_url\":\"https://jespinosa1983-cyber.github.io/gotify-sourcey-docs/\",\"docs_dir\":\"ci-docs\",\"checks\":{\"source_sha_matches\":true,\"operation_count_matches\":true,\"schema_count_matches\":true,\"evidence_operations_match\":true,\"search_index_has_coverage\":true,\"title_rendered\":true,\"application_rendered\":true,\"message_rendered\":true,\"stream_rendered\":true,\"report_has_five_gaps\":true,\"public_url_is_https\":true}}\n",
+    "stdout": "{\"status\":\"validated\",\"source_commit\":\"8221c0b895fdd1b1b84c0d5784e9422eb314ecb5\",\"spec_sha256\":\"1d8e93d7170d778d06ffc1d7aae82197bb7c45b970ee70efb4082fde789a2352\",\"operations\":41,\"schemas\":22,\"search_entries\":63,\"public_url\":\"https://jespinosa1983-cyber.github.io/gotify-sourcey-docs/\",\"docs_dir\":\"ci-docs\",\"checks\":{\"source_sha_matches\":true,\"operation_count_matches\":true,\"schema_count_matches\":true,\"evidence_operations_match\":true,\"search_index_has_coverage\":true,\"title_rendered\":true,\"application_rendered\":true,\"message_rendered\":true,\"stream_rendered\":true,\"report_has_five_gaps\":true,\"public_url_is_https\":true,\"runx_version_observed\":true}}\n",
     "structured_output": {
       "checks": {
         "application_rendered": true,
@@ -40,6 +41,7 @@
         "operation_count_matches": true,
         "public_url_is_https": true,
         "report_has_five_gaps": true,
+        "runx_version_observed": true,
         "schema_count_matches": true,
         "search_index_has_coverage": true,
         "source_sha_matches": true,
@@ -64,6 +66,7 @@
       "operation_count_matches": true,
       "public_url_is_https": true,
       "report_has_five_gaps": true,
+      "runx_version_observed": true,
       "schema_count_matches": true,
       "search_index_has_coverage": true,
       "source_sha_matches": true,
@@ -84,7 +87,7 @@
       {
         "artifact_refs": [],
         "closure": {
-          "closed_at": "2026-06-21T17:13:28.747Z",
+          "closed_at": "2026-06-21T17:25:29.423Z",
           "disposition": "closed",
           "reason_code": "process_exit",
           "summary": "cli-tool exited successfully"
@@ -139,7 +142,7 @@
       "terms": []
     },
     "canonicalization": "runx.receipt.c14n.v1",
-    "created_at": "2026-06-21T17:13:28.747Z",
+    "created_at": "2026-06-21T17:25:29.423Z",
     "decisions": [
       {
         "artifact_refs": [],
@@ -167,8 +170,8 @@
         "selected_harness_ref": null
       }
     ],
-    "digest": "sha256:705879afa32eab4c72755d7d9c8aa4d47a54b82084982a66d9c075a3e6527cc5",
-    "id": "sha256:517d2b81c6152043f7f84da6a1a96ee6d65ea3e45ae606c6dbefe891571103f1",
+    "digest": "sha256:b9990a27f2e41824270a4a7d1bd58d892393350815f7af879948b96afc93b481",
+    "id": "sha256:3b1fbb27dc1f557dc6f45bf491baeddad2a682f240ddabcff6fef123ef77a53c",
     "idempotency": {
       "content_hash": "sha256:run_default_7989705a0ade-default-content",
       "intent_key": "sha256:run_default_7989705a0ade-default-intent",
@@ -185,7 +188,7 @@
     },
     "schema": "runx.receipt.v1",
     "seal": {
-      "closed_at": "2026-06-21T17:13:28.747Z",
+      "closed_at": "2026-06-21T17:25:29.423Z",
       "criteria": [
         {
           "criterion_id": "process_exit",
@@ -196,14 +199,14 @@
         }
       ],
       "disposition": "closed",
-      "last_observed_at": "2026-06-21T17:13:28.747Z",
+      "last_observed_at": "2026-06-21T17:25:29.423Z",
       "reason_code": "process_closed",
       "summary": "cli-tool default completed"
     },
     "signals": [],
     "signature": {
       "alg": "Ed25519",
-      "value": "base64:t2pbDXy6SigGixWrNrtKBR1hnN4rThU2OGmLXbOSeYhfg1_cx0499UkUc-17X8WzH4Fu52ORGxSfsZqjEYPnBw"
+      "value": "base64:THkdAK6IBL2jf_d0hCoV95KKRPKu4tFNlhZ9m5Sb4fKapH7xt0sCPQJPIANZZJwn3xz0L1bAwBzX5mlqYbWmDQ"
     },
     "subject": {
       "commitments": [],
@@ -214,7 +217,7 @@
       }
     }
   },
-  "receipt_id": "sha256:517d2b81c6152043f7f84da6a1a96ee6d65ea3e45ae606c6dbefe891571103f1",
+  "receipt_id": "sha256:3b1fbb27dc1f557dc6f45bf491baeddad2a682f240ddabcff6fef123ef77a53c",
   "run_id": "run_default_7989705a0ade",
   "schema": "runx.skill_run.v1",
   "skill_name": "gotify-sourcey-validation",
