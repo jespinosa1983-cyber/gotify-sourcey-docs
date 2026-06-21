@@ -1,0 +1,222 @@
+{
+  "closure": {
+    "closed_at": "2026-06-21T17:10:18.370Z",
+    "disposition": "closed",
+    "reason_code": "process_closed",
+    "summary": "cli-tool default completed"
+  },
+  "execution": {
+    "exit_code": 0,
+    "skill_claim": {
+      "checks": {
+        "application_rendered": true,
+        "evidence_operations_match": true,
+        "message_rendered": true,
+        "operation_count_matches": true,
+        "public_url_is_https": true,
+        "report_has_five_gaps": true,
+        "schema_count_matches": true,
+        "search_index_has_coverage": true,
+        "source_sha_matches": true,
+        "stream_rendered": true,
+        "title_rendered": true
+      },
+      "docs_dir": "ci-docs",
+      "operations": 41,
+      "public_url": "https://jespinosa1983-cyber.github.io/gotify-sourcey-docs/",
+      "schemas": 22,
+      "search_entries": 63,
+      "source_commit": "8221c0b895fdd1b1b84c0d5784e9422eb314ecb5",
+      "spec_sha256": "1d8e93d7170d778d06ffc1d7aae82197bb7c45b970ee70efb4082fde789a2352",
+      "status": "validated"
+    },
+    "stderr": "",
+    "stdout": "{\"status\":\"validated\",\"source_commit\":\"8221c0b895fdd1b1b84c0d5784e9422eb314ecb5\",\"spec_sha256\":\"1d8e93d7170d778d06ffc1d7aae82197bb7c45b970ee70efb4082fde789a2352\",\"operations\":41,\"schemas\":22,\"search_entries\":63,\"public_url\":\"https://jespinosa1983-cyber.github.io/gotify-sourcey-docs/\",\"docs_dir\":\"ci-docs\",\"checks\":{\"source_sha_matches\":true,\"operation_count_matches\":true,\"schema_count_matches\":true,\"evidence_operations_match\":true,\"search_index_has_coverage\":true,\"title_rendered\":true,\"application_rendered\":true,\"message_rendered\":true,\"stream_rendered\":true,\"report_has_five_gaps\":true,\"public_url_is_https\":true}}\n",
+    "structured_output": {
+      "checks": {
+        "application_rendered": true,
+        "evidence_operations_match": true,
+        "message_rendered": true,
+        "operation_count_matches": true,
+        "public_url_is_https": true,
+        "report_has_five_gaps": true,
+        "schema_count_matches": true,
+        "search_index_has_coverage": true,
+        "source_sha_matches": true,
+        "stream_rendered": true,
+        "title_rendered": true
+      },
+      "docs_dir": "ci-docs",
+      "operations": 41,
+      "public_url": "https://jespinosa1983-cyber.github.io/gotify-sourcey-docs/",
+      "schemas": 22,
+      "search_entries": 63,
+      "source_commit": "8221c0b895fdd1b1b84c0d5784e9422eb314ecb5",
+      "spec_sha256": "1d8e93d7170d778d06ffc1d7aae82197bb7c45b970ee70efb4082fde789a2352",
+      "status": "validated"
+    }
+  },
+  "payload": {
+    "checks": {
+      "application_rendered": true,
+      "evidence_operations_match": true,
+      "message_rendered": true,
+      "operation_count_matches": true,
+      "public_url_is_https": true,
+      "report_has_five_gaps": true,
+      "schema_count_matches": true,
+      "search_index_has_coverage": true,
+      "source_sha_matches": true,
+      "stream_rendered": true,
+      "title_rendered": true
+    },
+    "docs_dir": "ci-docs",
+    "operations": 41,
+    "public_url": "https://jespinosa1983-cyber.github.io/gotify-sourcey-docs/",
+    "schemas": 22,
+    "search_entries": 63,
+    "source_commit": "8221c0b895fdd1b1b84c0d5784e9422eb314ecb5",
+    "spec_sha256": "1d8e93d7170d778d06ffc1d7aae82197bb7c45b970ee70efb4082fde789a2352",
+    "status": "validated"
+  },
+  "receipt": {
+    "acts": [
+      {
+        "artifact_refs": [],
+        "closure": {
+          "closed_at": "2026-06-21T17:10:18.370Z",
+          "disposition": "closed",
+          "reason_code": "process_exit",
+          "summary": "cli-tool exited successfully"
+        },
+        "criterion_bindings": [
+          {
+            "criterion_id": "process_exit",
+            "evidence_refs": [],
+            "status": "verified",
+            "summary": "cli-tool exited successfully",
+            "verification_refs": []
+          }
+        ],
+        "form": "observation",
+        "id": "act_default",
+        "intent": {
+          "constraints": [],
+          "derived_from": [],
+          "legitimacy": "Runtime graph execution was admitted by the local harness",
+          "purpose": "Run graph step default",
+          "success_criteria": [
+            {
+              "criterion_id": "process_exit",
+              "required": true,
+              "statement": "cli-tool exits successfully"
+            }
+          ]
+        },
+        "source_refs": [],
+        "summary": "Executed graph step default",
+        "target_refs": []
+      }
+    ],
+    "authority": {
+      "actor_ref": {
+        "type": "principal",
+        "uri": "runx:principal:local_runtime"
+      },
+      "attenuation": {
+        "parent_authority_ref": null,
+        "subset_proof": null
+      },
+      "authority_proof_refs": [],
+      "enforcement": {
+        "profile_hash": "sha256:runtime-skeleton-enforcement",
+        "redaction_refs": [],
+        "setup_refs": [],
+        "teardown_refs": []
+      },
+      "grant_refs": [],
+      "scope_refs": [],
+      "terms": []
+    },
+    "canonicalization": "runx.receipt.c14n.v1",
+    "created_at": "2026-06-21T17:10:18.370Z",
+    "decisions": [
+      {
+        "artifact_refs": [],
+        "choice": "open",
+        "closure": null,
+        "decision_id": "dec_default",
+        "inputs": {
+          "opportunity_refs": [],
+          "selection_ref": null,
+          "signal_refs": [],
+          "target_ref": null
+        },
+        "justification": {
+          "evidence_refs": [],
+          "summary": "runtime graph planner selected this node"
+        },
+        "proposed_intent": {
+          "constraints": [],
+          "derived_from": [],
+          "legitimacy": "Local graph execution requested this node",
+          "purpose": "Open runtime node default",
+          "success_criteria": []
+        },
+        "selected_act_id": "act_default",
+        "selected_harness_ref": null
+      }
+    ],
+    "digest": "sha256:d7a3b738ef24a2926ad0d512f373694a602078469335a00d9fe79eebf3642965",
+    "id": "sha256:644bf1b687e1e78000645a4fcb679d9e62beb5b8e187af0620517eee019c1158",
+    "idempotency": {
+      "content_hash": "sha256:run_default_7989705a0ade-default-content",
+      "intent_key": "sha256:run_default_7989705a0ade-default-intent",
+      "trigger_fingerprint": "sha256:run_default_7989705a0ade-default-trigger"
+    },
+    "issuer": {
+      "kid": "github-actions:jespinosa1983-cyber/gotify-sourcey-docs",
+      "public_key_sha256": "sha256:07f3220cc8764517e010b0fdd55052fe68e546c715eeff0b83d47f846d9f0ba8",
+      "type": "ci"
+    },
+    "lineage": {
+      "children": [],
+      "sync": []
+    },
+    "schema": "runx.receipt.v1",
+    "seal": {
+      "closed_at": "2026-06-21T17:10:18.370Z",
+      "criteria": [
+        {
+          "criterion_id": "process_exit",
+          "evidence_refs": [],
+          "status": "verified",
+          "summary": "cli-tool exited successfully",
+          "verification_refs": []
+        }
+      ],
+      "disposition": "closed",
+      "last_observed_at": "2026-06-21T17:10:18.370Z",
+      "reason_code": "process_closed",
+      "summary": "cli-tool default completed"
+    },
+    "signals": [],
+    "signature": {
+      "alg": "Ed25519",
+      "value": "base64:TVIvmppcz4C98PC5XKtr6kXO3HDIg3e37oUoDXvLjDNRKBKgNzOw7HRZVkmxCe7w7kiRW2uAifCfo0HdWh0zAA"
+    },
+    "subject": {
+      "commitments": [],
+      "kind": "skill",
+      "ref": {
+        "type": "harness",
+        "uri": "hrn_run_default_7989705a0ade_default"
+      }
+    }
+  },
+  "receipt_id": "sha256:644bf1b687e1e78000645a4fcb679d9e62beb5b8e187af0620517eee019c1158",
+  "run_id": "run_default_7989705a0ade",
+  "schema": "runx.skill_run.v1",
+  "skill_name": "gotify-sourcey-validation",
+  "status": "sealed"
+}
