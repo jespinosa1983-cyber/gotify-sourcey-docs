@@ -49,6 +49,4 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: governed-sourcey-validation
-          path: |
-            ci-validation.json
-            ci-receipts
+          path: docs/evidence
