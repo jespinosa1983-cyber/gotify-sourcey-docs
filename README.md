@@ -28,5 +28,7 @@ The build validates 41 operations and 22 schemas and writes static HTML, search,
 
 - `evidence.json`: machine-readable source, command, coverage, and spot checks.
 - `report.md`: maintainer-facing findings and recommendations.
+- `docs/evidence/receipt.json`: CI-issued runx receipt for the governed validation.
+- `docs/evidence/verification.json`: independent runx verification verdict.
 
 This is an independent documentation build, not an official Gotify site.

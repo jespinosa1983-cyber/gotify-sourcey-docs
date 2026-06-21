@@ -93,4 +93,12 @@ The generated reference documents all 41 source operations, exceeding the 20-ope
 
 ## Receipt
 
-The governed runx validation receipt remains pending official runx GitHub authorization. No receipt reference is fabricated.
+The published site and rebuilt CI output passed a deterministic runx validation in [GitHub Actions run 27911639614](https://github.com/jespinosa1983-cyber/gotify-sourcey-docs/actions/runs/27911639614).
+
+- Receipt ref: `runx:receipt:sha256:517d2b81c6152043f7f84da6a1a96ee6d65ea3e45ae606c6dbefe891571103f1`
+- Receipt JSON: https://jespinosa1983-cyber.github.io/gotify-sourcey-docs/evidence/receipt.json
+- Governed result: https://jespinosa1983-cyber.github.io/gotify-sourcey-docs/evidence/governed-validation.json
+- Verification verdict: https://jespinosa1983-cyber.github.io/gotify-sourcey-docs/evidence/verification.json
+- Public signing key: https://github.com/jespinosa1983-cyber/gotify-sourcey-docs/blob/master/validation/ci-signing-public-key.json
+
+`runx verify` reports a valid digest, valid content address, and valid Ed25519 production signature from issuer `github-actions:jespinosa1983-cyber/gotify-sourcey-docs`.

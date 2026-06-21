@@ -1,0 +1,25 @@
+{
+  "schema": "runx.verify_verdict.v1",
+  "receipt_id": "sha256:517d2b81c6152043f7f84da6a1a96ee6d65ea3e45ae606c6dbefe891571103f1",
+  "valid": true,
+  "digest": {
+    "status": "valid",
+    "expected": "sha256:705879afa32eab4c72755d7d9c8aa4d47a54b82084982a66d9c075a3e6527cc5",
+    "actual": "sha256:705879afa32eab4c72755d7d9c8aa4d47a54b82084982a66d9c075a3e6527cc5"
+  },
+  "content_address": {
+    "status": "valid",
+    "expected": "sha256:517d2b81c6152043f7f84da6a1a96ee6d65ea3e45ae606c6dbefe891571103f1",
+    "actual": "sha256:517d2b81c6152043f7f84da6a1a96ee6d65ea3e45ae606c6dbefe891571103f1"
+  },
+  "signature": {
+    "mode": "production",
+    "status": "valid",
+    "kid": "github-actions:jespinosa1983-cyber/gotify-sourcey-docs"
+  },
+  "lineage": {
+    "status": "unverified",
+    "message": "single receipt verification cannot prove receipt-tree lineage"
+  },
+  "findings": []
+}
