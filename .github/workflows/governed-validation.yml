@@ -1,0 +1,54 @@
+name: Governed Sourcey validation
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    env:
+      RUNX_RECEIPT_SIGN_KID: github-actions:jespinosa1983-cyber/gotify-sourcey-docs
+      RUNX_RECEIPT_SIGN_ED25519_SEED_BASE64: ${{ secrets.RUNX_RECEIPT_SIGN_ED25519_SEED_BASE64 }}
+      RUNX_RECEIPT_SIGN_ISSUER_TYPE: ci
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Install pinned CLIs
+        run: npm install --global @runxhq/cli@0.6.8 sourcey@3.6.3
+
+      - name: Rebuild Sourcey output
+        run: |
+          sourcey validate source/spec.json
+          sourcey build source/spec.json -o ci-docs
+
+      - name: Run governed validation
+        run: |
+          mkdir -p ci-receipts
+          runx skill ./validation -R ./ci-receipts \
+            -i project_root=.. -i docs_dir=ci-docs --json | tee ci-validation.json
+
+      - name: Publish receipt evidence
+        run: |
+          mkdir -p docs/evidence/ci-receipts
+          cp ci-validation.json docs/evidence/ci-validation.json
+          cp -R ci-receipts/. docs/evidence/ci-receipts/
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/evidence
+          git commit -m "Publish governed Sourcey validation receipt"
+          git push
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: governed-sourcey-validation
+          path: |
+            ci-validation.json
+            ci-receipts

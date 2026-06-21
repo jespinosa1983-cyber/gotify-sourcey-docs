@@ -1,0 +1,7 @@
+{
+  "schema": "runx.receipt.signing-key.v1",
+  "kid": "github-actions:jespinosa1983-cyber/gotify-sourcey-docs",
+  "algorithm": "ed25519",
+  "issuer_type": "ci",
+  "public_key_base64": "Os0IpOxYELSKYsxrwnY+AJ1EImKiffLWeQqFONlvhNg="
+}

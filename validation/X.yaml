@@ -1,0 +1,52 @@
+skill: gotify-sourcey-validation
+version: "1.0.0"
+
+catalog:
+  kind: skill
+  audience: public
+  visibility: public
+  role: canonical
+
+harness:
+  cases:
+    - name: validates-pinned-gotify-sourcey-output
+      runner: default
+      inputs:
+        project_root: ".."
+        docs_dir: docs
+      expect:
+        status: sealed
+        receipt:
+          schema: runx.receipt.v1
+          state: sealed
+          disposition: closed
+          reason_code: process_closed
+    - name: missing-project-fails-closed
+      runner: default
+      inputs:
+        project_root: missing-project
+        docs_dir: docs
+      expect:
+        status: failure
+        receipt:
+          schema: runx.receipt.v1
+          state: sealed
+          disposition: closed
+          reason_code: process_failed
+
+runners:
+  default:
+    default: true
+    type: cli-tool
+    command: node
+    args:
+      - run.mjs
+    inputs:
+      project_root:
+        type: string
+        required: true
+        description: Project root relative to this skill directory.
+      docs_dir:
+        type: string
+        required: false
+        description: Generated Sourcey directory relative to the project root.
