@@ -122,6 +122,13 @@
   ],
   "observations": [
     {
+      "id": "runx-version",
+      "finding": "The governed validation uses runx CLI 0.6.8.",
+      "recommendation": "Keep governed validation pinned to runx CLI 0.6.6 or newer.",
+      "command": "runx --version",
+      "output": "runx-cli 0.6.8"
+    },
+    {
       "id": "version-gap",
       "finding": "Spec info.version is 2.1.0 while current release checked is v2.9.1.",
       "recommendation": "Derive or explain the API schema version."

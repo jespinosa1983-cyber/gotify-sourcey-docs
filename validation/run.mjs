@@ -63,6 +63,9 @@ try {
     stream_rendered: apiHtml.includes("/stream"),
     report_has_five_gaps: (report.match(/^### /gm) ?? []).length >= 5,
     public_url_is_https: /^https:\/\//.test(evidence.public_url ?? ""),
+    runx_version_observed: evidence.observations?.some(
+      (observation) => observation.command === "runx --version" && observation.output === "runx-cli 0.6.8",
+    ) === true,
   };
 
   const failed = Object.entries(checks).filter(([, passed]) => !passed).map(([name]) => name);
