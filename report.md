@@ -93,9 +93,9 @@ The generated reference documents all 41 source operations, exceeding the 20-ope
 
 ## Receipt
 
-The published site and rebuilt CI output passed a deterministic runx validation in [GitHub Actions run 27911639614](https://github.com/jespinosa1983-cyber/gotify-sourcey-docs/actions/runs/27911639614).
+The published site and rebuilt CI output passed a deterministic runx validation in [GitHub Actions run 27911938877](https://github.com/jespinosa1983-cyber/gotify-sourcey-docs/actions/runs/27911938877).
 
-- Receipt ref: `runx:receipt:sha256:517d2b81c6152043f7f84da6a1a96ee6d65ea3e45ae606c6dbefe891571103f1`
+- Receipt ref: `runx:receipt:sha256:3b1fbb27dc1f557dc6f45bf491baeddad2a682f240ddabcff6fef123ef77a53c`
 - Receipt JSON: https://jespinosa1983-cyber.github.io/gotify-sourcey-docs/evidence/receipt.json
 - Governed result: https://jespinosa1983-cyber.github.io/gotify-sourcey-docs/evidence/governed-validation.json
 - Verification verdict: https://jespinosa1983-cyber.github.io/gotify-sourcey-docs/evidence/verification.json

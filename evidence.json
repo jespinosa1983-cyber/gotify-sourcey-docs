@@ -610,13 +610,13 @@
   "runx": {
     "version_command": "runx --version",
     "version_output": "runx-cli 0.6.8",
-    "receipt_ref": "runx:receipt:sha256:517d2b81c6152043f7f84da6a1a96ee6d65ea3e45ae606c6dbefe891571103f1",
-    "receipt_id": "sha256:517d2b81c6152043f7f84da6a1a96ee6d65ea3e45ae606c6dbefe891571103f1",
+    "receipt_ref": "runx:receipt:sha256:3b1fbb27dc1f557dc6f45bf491baeddad2a682f240ddabcff6fef123ef77a53c",
+    "receipt_id": "sha256:3b1fbb27dc1f557dc6f45bf491baeddad2a682f240ddabcff6fef123ef77a53c",
     "receipt_status": "verified",
     "receipt_url": "https://jespinosa1983-cyber.github.io/gotify-sourcey-docs/evidence/receipt.json",
     "governed_validation_url": "https://jespinosa1983-cyber.github.io/gotify-sourcey-docs/evidence/governed-validation.json",
     "verification_url": "https://jespinosa1983-cyber.github.io/gotify-sourcey-docs/evidence/verification.json",
-    "workflow_run_url": "https://github.com/jespinosa1983-cyber/gotify-sourcey-docs/actions/runs/27911639614",
+    "workflow_run_url": "https://github.com/jespinosa1983-cyber/gotify-sourcey-docs/actions/runs/27911938877",
     "verification": {
       "valid": true,
       "digest": "valid",
